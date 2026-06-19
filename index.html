@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Hobby Project</title>
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+		<header>
+			<h1>Hobby Project</h1>
+			<nav aria-label="Main Navigation">
+				<a href="#">Placholder link</a>
+			</nav>
+		</header>
+
+		<main>
+			<nav id="table-of-contents" aria-labelledby="toc-title">
+				<h2 id="toc-title">Table of Contents</h2>
+				<ol>
+					<li><a href="#table-of-contents">Table of Contents</a></li>
+					<li><a href="#what-is">What is a hobby project?</a></li>
+					<li><a href="#user-impact">What does this mean for users?</a></li>
+					<li>
+						<a href="#dev-info">Information for developers</a>
+						<ol>
+							<li><a href="#declaration">Declaring a hobby project</a></li>
+							<li><a href="#org">Organisational Considerations</a></li>
+							<li><a href="#tech">Technical Considerations</a></li>
+						</ol>
+					</li>
+					<li><a href="#inspirations">Inspirations</a></li>
+				</ol>
+			</nav>
+
+			<section id="what-is" aria-labelledby="what-is-title">
+				<h2 id="what-is-title">What is a hobby project?</h2>
+				<p>
+					A <strong>hobby project</strong>
+					is a project that somebody is developing and (hopefully)
+					maintaining in their free time, as a form of recreation.
+				</p>
+				<p>
+					Their life does not revolve around that project. Even though they have fun working on it,
+					they do not want to spend the entirity of their free time on it.
+				</p>
+				<p>
+					Note that this page is written with a focus on software projects, but you can apply the same
+					principles to other fields.
+				</p>
+			</section>
+
+			<section id="user-impact" aria-labelledby="user-impact-title">
+				<h2 id="user-impact-title">What does this mean for users?</h2>
+				<p>
+					The time the maintainer spends on the project is rather limited, and a lot of time may pass
+					between burts of activity. Also, they'll likely focus on doing the things they enjoy.
+				</p>
+				<p>
+					This might impact users in several different ways. See below for a non-exhaustive list. Note
+					that not all hobby projects are alike, and while some might be affected by all of these
+					examples, others could be by only one or two. Also, there very well could be other problems
+					not listed here.
+				</p>
+				<ol>
+					<li>There are no reliable timelines for what gets done when.</li>
+					<li>Considerable time may pass before bugs are fixed.</li>
+					<li>The same applies to feature development.</li>
+					<li>It also can take a while to get support if you run into problems.</li>
+					<li>Documentation may be incomplete or non-existing.</li>
+					<li>The same applies to automated tests, which might cause breaking changes or regressions.</li>
+					<li>
+						Some features may never be implemented, because they are too complicated, time-intensive
+						or annoying to maintain.
+					</li>
+					<li>
+						The same applies to optimisations, meaning a program may be larger, slower or
+						resource-intensive (e.g. CPU, RAM, …) than it could be.
+					</li>
+					<li>The project may be abandoned at any time.</li>
+					<li>etc.</li>
+				</ol>
+				<p>
+					Note that by using a hobby project,
+					<strong>you also accept the <em>consequences</em></strong>.
+					The maintainer <strong>owes you <em>nothing</em></strong>
+					and you are
+					<strong>not entitled to <em>anything</em></strong>!
+				</p>
+			</section>
+
+			<section id="dev-info" aria-labelledby="dev-info-title">
+				<h2 id="dev-info-title">Information for developers</h2>
+				<p>
+					If you are a programmer you'll likely have a pile of ideas that you'd like to implement one
+					day. These are sometimes called
+					<a href="https://www.commitstrip.com/en/2014/11/25/west-side-project-story/?">
+						side projects
+					</a>,
+					but let's call them <em>hobby projects</em>, because that clearly expresses their nature
+					as something done for fun.
+				</p>
+				<p>
+					Hobby projects are in permanent danger of being abandoned, as they are often not very
+					important to their creators. Thus once they stop being fun, free time becomes sparse or
+					something more interesting comes along, they usually don't last long.
+				</p>
+				<p>
+					This document is intended to make total abandonment less likely. For that purpose it
+					explains the concept and its impact to users. It also provides a few suggestions for you as
+					a developer on what to do to keep the project fun and managable, and how to make it enduring
+					from a technical perspective.
+				</p>
+				<p>
+					However, please don't feel limited by any of those suggestions.
+					<strong>The most important thing is that you enjoy working on your hobby project.</strong>
+					While the suggestions may help some people with that, they might not for others. They are
+					just meant as a list of ideas you may find interesting.
+				</p>
+
+				<section id="declaration" aria-labelledby="declaration-title">
+					<h3 id="declaration-title">Declaring a hobby project</h3>
+					<p>
+						It is a good idea to let anybody looking at your project know, that you work on it as a
+						hobby. This helps you set the correct expectations. You can use the markdown snippet
+						below to do so in your README.
+					</p>
+
+					<pre><code>> **Hobby Project**
+>
+> This is a [hobby project](https://hobby-project.dev). It is worked on recreationally, and its
+> resources are limited. This may impact you. Follow the previous link to learn more.
+          </code></pre>
+				</section>
+
+				<section id="org" aria-labelledby="org-title">
+					<h3 id="org-title">Organisational Considerations</h3>
+					<p>These are some organisational ideas you might want to take into account.</p>
+
+					<h4 id="clear-goals">Clear Goals</h4>
+					<p>
+						<a href="https://en.wikipedia.org/wiki/Feature_creep">Feature creep</a>
+						is very	dangerous to hobby projects. They usually run on minimal resources already, and
+						in that	situation adding a couple of features here and there be the	difference between a
+						success and another abandoned idea.
+					</p>
+					<p>
+						As a counter measure you should set explicit and specific <strong>goals</strong>
+						from the very start. Everything that isn't either itself a goal or part of one, is
+						implicitly out of scope for the project.
+					</p>
+					<p>
+						This also applies to logical or trivial extensions. If you really want to, you can
+						tackle them once the core project is complete. Until then, leave them be.
+					</p>
+
+					<h4>Extensive Documentation</h4>
+					<p>
+						There most likely will be significant periods in which you will barely work on your
+						hobby project, if at all. In those times it is likely that you will forget a lot of the
+						things you know about it. This knowledge often takes a lot of time to rediscover, and
+						the process is often annoying, which might make you abandon your project.
+					</p>
+					<p>
+						You can prevent a lot of this by extensively documenting your project from the very
+						start. It is tempting to think something like
+						<em>"I'll get to a first prototype, then document everything."</em>
+						There is a good chance you'll take a break right after the prototype, and then have no
+						idea where to continue afterwards.
+					</p>
+					<p>
+						Some of the things you should document:
+					</p>
+					<ul>
+						<li>The <a href="#clear-goals">project goals</a></li>
+						<li>The overall architecture you decided on</li>
+						<li>How to build/run the program</li>
+						<li>A list of ToDos and their completion status</li>
+						<li>
+							The purpose of modules, data types, functions, …. Use the doc comments of your
+							language, if possible, so that an LSP can pick them up.
+						</li>
+					</ul>
+
+					<h4>Automated Testing</h4>
+					<p>
+						Automated tests are very important for all software projects, be they hobby or
+						professional. You might think yours is small enough to keep track of everything in your
+						head, but you would be wrong.
+					</p>
+					<p>
+						Even if you do manage without tests for the start, once a couple months go by you will
+						forget your earlier decisions. Worse yet, you'll make incorrect assumptions about them,
+						leading to bugs.
+					</p>
+					<p>
+						Without automated tests it might take you quite some time to notice that there is a
+						problem in the first place. If that happens, fixing it becomes even harder, because you
+						not only will have to regain an understanding of the original code, but also the
+						intentions behind your buggy change.
+					</p>
+					<p>
+						All of this is quite time-consuming and annoying, which might make you abbandon your
+						project all together. To avoid that, it's much easier to take the time to write tests
+						upfront.
+					</p>
+				</section>
+
+				<section id="tech" aria-labelledby="tech-title">
+					<h3 id="tech-title">Technical Considerations</h3>
+					Some technical things you might want to think about.
+
+					<h4>Reduce Dependencies</h4>
+					<p>
+						Most modern programmings languages, like
+						<a href="https://rust-lang.org/">Rust</a>,
+						<a href="https://www.npmjs.com/">JavaScript</a>
+						and <a href="https://go.dev/">Go</a>
+						have widespread (or integrated) package managers, that make it easy to use a lot of
+						libraries. This is great, especially when starting, because it means you can minimize
+						the work you have to do.
+					</p>
+					<p>
+						However, this also has a significant downside. You need to keep your dependencies up to
+						date, because otherwise you might run into problems. Depending on the type of project
+						you are building, not doing so might also lead to severe security problems.
+					</p>
+					<p>
+						This is easy enough if you only rely on a handful of libraries. It becomes
+						significantly more difficult once you depend on several hundreds of them. So you should
+						keep an eye on your dependencies and carefully consider if the time saved by using a
+						library is more significant than the maintenance this will take.
+					</p>
+					<p>
+						You might also want to consider <em>vendoring</em>
+						your dependencies, instead of using
+						a package manager. This means including the dependency code within your own source code,
+						and shipping it as part of your application. Doing so makes adding new ones more
+						difficult, and dissuades you from doing so excessively.
+					</p>
+
+					<h4>Simplified Development Environment</h4>
+					<p>
+						Some languages, like <a href="https://learn.microsoft.com/dotnet/csharp/">C#</a>
+						provide very large toolsets, like
+						<a href="https://visualstudio.microsoft.com/">Visual Studio</a>. Those can be very
+						time-consuming and annoying to set up. If you get a new computer during your project,
+						this might mean you abandon it, because you are not willing to spend that time just to
+						set up the tools again.
+					</p>
+					<p>
+						To avoid this, you should prefer languages or toolsets that are quicker to set up. For
+						example, setting up <a href="https://rust-lang.org/">Rust</a>
+						is a quick and easy process using <em>rustup</em>. If you combine that with an editor
+						like <a href="https://helix-editor.com">Helix</a>
+						you might be up and running on a new system in about five minutes.
+					</p>
+
+					<h4>Targetting Baseline (web only)</h4>
+					<p>
+						If your project is a website or web app, you should strive to use only features that are
+						<a href="https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility">
+							Baseline Widely available
+						</a>. This should mean that you don't run into problems where browser behave
+						differently, or only some support a feature. This avoids the need for fallback
+						implementations, as it is much less likely that any user will have a browser that isn't
+						supported. This also makes it a lot easier to tell a user that they need to upgrade
+						their browser, if a problem actually arises.
+					</p>
+				</section>
+			</section>
+
+			<section id="inspirations" aria-labelledby="inspirations-title">
+				<h2 id="inspirations-title">Inspirations</h2>
+				<p>These are some of the things that inspired me to create this page:</p>
+				<ul>
+					<li><a href="https://grugbrain.dev/">The Grug Brained Developer</a></li>
+					<li>
+						<a href="https://cultofdone.org/">The Cult of Done Manifesto</a>, and
+						<a href="https://www.youtube.com/watch?v=bJQj1uKtnus">No Boilerplate's video</a>
+						on it.
+					</li>
+					<li>Several hobby projects I have abandoned in the past.</li>
+				</ul>
+			</section>
+		</main>
+
+		<footer>
+			Created by <a href="https://tfld.dev">TeFiLeDo</a>
+			•
+			<a href="https://garten.tfld.dev/Impressum" lang="de">Impressum</a>
+			•
+			<a href="https://github.com/TeFiLeDo/hobby-project">Source Code</a>
+		</footer>
+	</body>
+</html>
