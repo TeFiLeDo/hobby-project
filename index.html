@@ -4,21 +4,21 @@
 	<head>
 		<title>Hobby Project</title>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/normalize.css">
+		<link rel="stylesheet" href="/style.css">
 	</head>
 
 	<body>
 		<header>
 			<h1>Hobby Project</h1>
-			<nav aria-label="Main Navigation">
-				<a href="#">Placholder link</a>
-			</nav>
+			<!-- <nav aria-label="Main Navigation"></nav> -->
 		</header>
 
-		<main>
-			<nav id="table-of-contents" aria-labelledby="toc-title">
+		<div id="nav-container">
+			<nav aria-labelledby="toc-title">
 				<h2 id="toc-title">Table of Contents</h2>
 				<ol>
-					<li><a href="#table-of-contents">Table of Contents</a></li>
 					<li><a href="#what-is">What is a hobby project?</a></li>
 					<li><a href="#user-impact">What does this mean for users?</a></li>
 					<li>
@@ -32,7 +32,9 @@
 					<li><a href="#inspirations">Inspirations</a></li>
 				</ol>
 			</nav>
+		</div>
 
+		<main>
 			<section id="what-is" aria-labelledby="what-is-title">
 				<h2 id="what-is-title">What is a hobby project?</h2>
 				<p>
@@ -129,8 +131,7 @@
 					<pre><code>> **Hobby Project**
 >
 > This is a [hobby project](https://hobby-project.dev). It is worked on recreationally, and its
-> resources are limited. This may impact you. Follow the previous link to learn more.
-          </code></pre>
+> resources are limited. This may impact you. Follow the previous link to learn more.</code></pre>
 				</section>
 
 				<section id="org" aria-labelledby="org-title">
@@ -287,10 +288,8 @@
 
 		<footer>
 			Created by <a href="https://tfld.dev">TeFiLeDo</a>
-			•
-			<a href="https://garten.tfld.dev/Impressum" lang="de">Impressum</a>
-			•
-			<a href="https://github.com/TeFiLeDo/hobby-project">Source Code</a>
+			• <a href="https://garten.tfld.dev/Impressum" lang="de">Impressum</a>
+			• <a href="https://github.com/TeFiLeDo/hobby-project">Source Code</a>
 		</footer>
 	</body>
 </html>

@@ -1,0 +1,153 @@
+body {
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    ". content nav ."
+    "footer footer footer footer";
+  grid-template-columns: auto min(50%, 650px) min(25%, 300px) auto;
+  gap: 1em;
+
+  @media (max-width: 999px) {
+    grid-template-columns: auto 60% 30% auto;
+  }
+
+  @media (max-width: 799px) {
+    grid-template-areas:
+      "header header header"
+      ". nav ."
+      ". content ."
+      "footer footer footer";
+    grid-template-columns: auto 80% auto;
+    gap: 1em 0;
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: auto 90% auto;
+  }
+
+  @media (max-width: 399px) {
+    grid-template-columns: auto 95% auto;
+  }
+
+  >header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    padding: 1em;
+    background: #222;
+
+    @media (prefers-color-scheme: light) {
+      background: black;
+      color: white;
+    }
+  }
+
+  >#nav-container {
+    grid-area: nav;
+
+    >nav {
+      @media (min-width: 800px) {
+        position: sticky;
+        /* TODO: figure out a better way to keep below header */
+        /* global header (2em text + 1em padding above and below + 0.3em to
+         * match line height (which is 1.15 but on 2em font)) and 1em padding */
+        top: 5.3em;
+      }
+    }
+  }
+
+  >main {
+    grid-area: content;
+  }
+
+  >footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 0 1ch;
+  }
+}
+
+html {
+  background: black;
+  color: white;
+
+  @media (prefers-color-scheme: light) {
+    background: white;
+    color: black;
+  }
+
+
+  /* TODO: figure out a better way to keep below header */
+  /* global header (2em text + 1em padding above and below + 0.3em to match line
+   * height (which is 1.15 but on 2em font)) and 1em padding */
+  scroll-padding-top: 5.3em;
+}
+
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+
+  padding: 1ch;
+  border-radius: 1ch;
+  background: #444;
+
+  @media (prefers-color-scheme: light) {
+    background: #eee;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #F80;
+
+  &:visited:not(footer *):not(nav *) {
+    color: #A60;
+  }
+
+  @media (prefers-color-scheme: light) {
+    color: #EF7A00;
+
+    &:visited:not(footer *):not(nav *) {
+      color: #A60;
+    }
+  }
+}
+
+:first-child {
+  margin-top: 0;
+}
+
+:last-child {
+  margin-bottom: 0;
+}
+
+ul>li>ul,
+ul>li>ol,
+ol>li>ul,
+ol>li>ol {
+  margin-top: 0.5cap;
+}
+
+li {
+  margin-bottom: 0.5cap;
+}
+
+section:not(section section),
+nav {
+  padding: 1em;
+  border-radius: 1em;
+  background-color: #222;
+
+  @media (prefers-color-scheme: light) {
+    background-color: #ddd;
+  }
+}
+
+section:not(:first-child) {
+  margin-top: 1em;
+
+  &:is(section section) {
+    margin-top: 2em;
+  }
+}
