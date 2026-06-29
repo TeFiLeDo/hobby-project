@@ -53,6 +53,10 @@ body {
          * match line height (which is 1.15 but on 2em font)) and 1em padding */
         top: 5.3em;
       }
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 
@@ -98,7 +102,6 @@ pre {
 }
 
 a {
-  text-decoration: none;
   color: #F80;
 
   &:visited:not(footer *):not(nav *) {
@@ -106,10 +109,10 @@ a {
   }
 
   @media (prefers-color-scheme: light) {
-    color: #EF7A00;
+    color: rgb(134, 0, 188);
 
     &:visited:not(footer *):not(nav *) {
-      color: #A60;
+      color: rgb(96, 0, 134);
     }
   }
 }
