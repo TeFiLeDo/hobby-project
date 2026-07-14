@@ -31,8 +31,9 @@
 						<a href="#dev-info">Information for developers</a>
 						<ol>
 							<li><a href="#declaration">Declaring a hobby project</a></li>
-							<li><a href="#org">Organisational Considerations</a></li>
-							<li><a href="#tech">Technical Considerations</a></li>
+							<li><a href="#managable">Kepping things managable</a></li>
+							<li><a href="#pauses">Preparing for long pauses</a></li>
+							<li><a href="#abandon">Enduring abandonment</a></li>
 						</ol>
 					</li>
 					<li><a href="#inspirations">Inspirations</a></li>
@@ -146,36 +147,48 @@
 			<section id="dev-info" aria-labelledby="dev-info-title">
 				<h2 id="dev-info-title">Information for developers</h2>
 				<p>
-					If you are a programmer you'll likely have a pile of ideas that you'd like to implement one
-					day. These are sometimes called
+					If you are a software developer, it is quite likely that you have a pile of ideas you'd
+					like to implement some day. Projects arising from them are sometimes called
 					<a href="https://www.commitstrip.com/en/2014/11/25/west-side-project-story/?">side projects</a>,
-					but let's call them <em>hobby projects</em>, because that clearly expresses their nature
-					as something done for fun.
+					but let's call them <em>hobby projects</em>
+					instead. This clearly communicates that the primary purpose of them is to have fun, and
+					thus sets the right expectations.
 				</p>
 				<p>
-					Hobby projects are in permanent danger of being abandoned, as they are often not very
-					important to their creators. Thus once they stop being fun, free time becomes sparse or
-					something more interesting comes along, they usually don't last long.
+					Hobby projects face three challenges, that should be considered when starting or working
+					on them. This section of the document is meant as guidance on dealing with them. They
+					are:
 				</p>
+				<ul>
+					<li>
+						It is hard to manage your hobby project. Complexity and feature creep can quickly get
+						out of hand, making it so that you gain little from the time you spend on it. This can
+						even lead to it no longer being fun to work on.
+					</li>
+					<li>
+						After finishing the initial spurt, you will likely only work sporadically on your hobby
+						project. In the meantime it is easy to forget about it, making it difficult to continue
+						work later.
+					</li>
+					<li>
+						Chances are that you sooner or later abandon your hobby project. Depending on how you
+						implemented it, this might quickly make it totally useless, or it could endure for
+						years to come.
+					</li>
+				</ul>
 				<p>
-					This document is intended to make total abandonment less likely. For that purpose it
-					explains the concept and its impact to users. It also provides a few suggestions for you as
-					a developer on what to do to keep the project fun and managable, and how to make it enduring
-					from a technical perspective.
-				</p>
-				<p>
-					However, please don't feel limited by any of those suggestions.
-					<strong>The most important thing is that you enjoy working on your hobby project.</strong>
-					While the suggestions may help some people with that, they might not for others. They are
-					just meant as a list of ideas you may find interesting.
+					Before we get into the detailed guidance, please remember that the
+					<strong>purpose of a hobby project is to have fun</strong>. Please don't feel limited by
+					the suggestion, or obligated to follow them.
 				</p>
 
 				<section id="declaration" aria-labelledby="declaration-title">
 					<h3 id="declaration-title">Declaring a hobby project</h3>
 					<p>
-						It is a good idea to let anybody looking at your project know, that you work on it as a
-						hobby. This helps you set the correct expectations. You can use the markdown snippet
-						below to do so in your README.
+						Before doing anything else, you should everybody looking at your project know that you
+						work on it as a hobby. This helps you set the correct expectations. You can use this
+						MarkDown snippet in your <code>README.md</code>
+						file:
 					</p>
 
 					<pre><code>> **Hobby Project**
@@ -184,139 +197,200 @@
 > resources are limited. This may impact you. Follow the previous link to learn more.</code></pre>
 				</section>
 
-				<section id="org" aria-labelledby="org-title">
-					<h3 id="org-title">Organisational Considerations</h3>
-					<p>These are some organisational ideas you might want to take into account.</p>
+				<section id="managable" aria-labelledby="managable-title">
+					<h3 id="managable-title">Keeping things managable</h3>
+					<p>
+						Staying in control of your hobby project, not getting side-tracked and not letting it
+						overwhelm you, is quite hard. Companies often employ project managers who do it
+						professionally. For a hobby project, hiring people is unfeasible, and without doing so
+						most usual approaches are to time consuming.
+					</p>
 
-					<h4 id="clear-goals">Clear Goals</h4>
+					<h4>Setting clear goals</h4>
 					<p>
 						<a href="https://en.wikipedia.org/wiki/Feature_creep">Feature creep</a>
-						is very	dangerous to hobby projects. They usually run on minimal resources already, and
-						in that	situation adding a couple of features here and there be the	difference between a
+						is very dangerous to hobby projects. They usually run on minimal resources, and in that
+						situation adding a couple of features here and there can be the difference between a
 						success and another abandoned idea.
 					</p>
 					<p>
 						As a counter measure you should set explicit and specific <strong>goals</strong>
-						from the very start. Everything that isn't either itself a goal or part of one, is
-						implicitly out of scope for the project.
+						from the very start. All features that are not strictly necessary to achieve these
+						goals are implicitly out of scope.
 					</p>
 					<p>
 						This also applies to logical or trivial extensions. If you really want to, you can
 						tackle them once the core project is complete. Until then, leave them be.
 					</p>
 
-					<h4>Extensive Documentation</h4>
+					<h4>Choosing dependencies</h4>
 					<p>
-						There most likely will be significant periods in which you will barely work on your
-						hobby project, if at all. In those times it is likely that you will forget a lot of the
-						things you know about it. This knowledge often takes a lot of time to rediscover, and
-						the process is often annoying, which might make you abandon your project.
+						Most modern programming languages have a way of easily importing dependencies. This
+						is great, because it allows you to quickly implement your actual project, instead of
+						having to build a lot of needed infrastructure first.
 					</p>
 					<p>
-						You can prevent a lot of this by extensively documenting your project from the very
-						start. It is tempting to think something like
-						<em>"I'll get to a first prototype, then document everything."</em>
-						There is a good chance you'll take a break right after the prototype, and then have no
-						idea where to continue afterwards.
+						However, dependencies are not free. They add complexity to your build process, can be
+						confusing during debugging and may be the source of security issues.
 					</p>
 					<p>
-						Some of the things you should document:
-					</p>
-					<ul>
-						<li>The <a href="#clear-goals">project goals</a></li>
-						<li>The overall architecture you decided on</li>
-						<li>How to build/run the program</li>
-						<li>A list of ToDos and their completion status</li>
-						<li>
-							The purpose of modules, data types, functions, …. Use the doc comments of your
-							language, if possible, so that an LSP can pick them up.
-						</li>
-					</ul>
-
-					<h4>Automated Testing</h4>
-					<p>
-						Automated tests are very important for all software projects, be they hobby or
-						professional. You might think yours is small enough to keep track of everything in your
-						head, but you would be wrong.
+						They also will receive updates (hopefully). Migrating your code to new versions can
+						quickly become a nightmare, once fundamental dependencies have major changes, or
+						different libraries start fighting each other because of version mismatches.
 					</p>
 					<p>
-						Even if you do manage without tests for the start, once a couple months go by you will
-						forget your earlier decisions. Worse yet, you'll make incorrect assumptions about them,
-						leading to bugs.
+						This gets especially bad, if you don't update somewhat regularly. That however can be
+						a problem in itself for hobby projects, which can have months-long pauses for variety
+						of reasons.
 					</p>
 					<p>
-						Without automated tests it might take you quite some time to notice that there is a
-						problem in the first place. If that happens, fixing it becomes even harder, because you
-						not only will have to regain an understanding of the original code, but also the
-						intentions behind your buggy change.
-					</p>
-					<p>
-						All of this is quite time-consuming and annoying, which might make you abbandon your
-						project all together. To avoid that, it's much easier to take the time to write tests
-						upfront.
+						As a mitigation, you should carefully consider the pros and cons of each dependency
+						you add. Is it really worth it, or could you implement the same rather quickly. You
+						should also check the history and policy of dependencies, and prefer stable, predictable
+						ones.
 					</p>
 				</section>
 
-				<section id="tech" aria-labelledby="tech-title">
-					<h3 id="tech-title">Technical Considerations</h3>
-					Some technical things you might want to think about.
-
-					<h4>Reduce Dependencies</h4>
+				<section id="pauses" aria-labelledby="pauses-title">
+					<h3 id="pauses-title">Preparing for long pauses</h3>
 					<p>
-						Most modern programmings languages, like
-						<a href="https://rust-lang.org/">Rust</a>,
-						<a href="https://www.npmjs.com/">JavaScript</a>
-						and <a href="https://go.dev/">Go</a>
-						have widespread (or integrated) package managers, that make it easy to use a lot of
-						libraries. This is great, especially when starting, because it means you can minimize
-						the work you have to do.
-					</p>
-					<p>
-						However, this also has a significant downside. You need to keep your dependencies up to
-						date, because otherwise you might run into problems. Depending on the type of project
-						you are building, not doing so might also lead to severe security problems.
-					</p>
-					<p>
-						This is easy enough if you only rely on a handful of libraries. It becomes
-						significantly more difficult once you depend on several hundreds of them. So you should
-						keep an eye on your dependencies and carefully consider if the time saved by using a
-						library is more significant than the maintenance this will take.
-					</p>
-					<p>
-						You might also want to consider <em>vendoring</em>
-						your dependencies, instead of using
-						a package manager. This means including the dependency code within your own source code,
-						and shipping it as part of your application. Doing so makes adding new ones more
-						difficult, and dissuades you from doing so excessively.
+						Life is busy, and hobby projects are usually not that high on your list of priorities.
+						This means that there can be long pauses between bursts of activity. In that downtime,
+						you'll forget important knowledge about your own project. This is not only frustrating,
+						but can also lead to severe bugs. So you should prepare for it.
 					</p>
 
-					<h4>Simplified Development Environment</h4>
+					<h4>Extensive documentation</h4>
 					<p>
-						Some languages, like <a href="https://learn.microsoft.com/dotnet/csharp/">C#</a>
-						provide very large toolsets, like
-						<a href="https://visualstudio.microsoft.com/">Visual Studio</a>. Those can be very
-						time-consuming and annoying to set up. If you get a new computer during your project,
-						this might mean you abandon it, because you are not willing to spend that time just to
-						set up the tools again.
+						Few things in software development are as frustrating as having to understand what you
+						were thinking a couple of months ago. Aside from being annoying, this is also time
+						consuming and hard. So you should put in some effort upfront and document everything.
 					</p>
 					<p>
-						To avoid this, you should prefer languages or toolsets that are quicker to set up. For
-						example, setting up <a href="https://rust-lang.org/">Rust</a>
-						is a quick and easy process using <em>rustup</em>. If you combine that with an editor
-						like <a href="https://helix-editor.com">Helix</a>
-						you might be up and running on a new system in about five minutes.
+						For a hobby project it is best to keep the documentation close to the actual project.
+						If you document a piece of code, use doc comments if your language supports it. For
+						other, more abstract information, create a docs folder and fill it with markdown files.
+						This ensures that you don't loose the documentation itself.
+					</p>
+					<p>You should write down at least the following information:</p>
+					<ol>
+						<li>The project goals</li>
+						<li>How to build and run the program</li>
+						<li>The overall architecture</li>
+						<li>A list of ToDos and their current status</li>
+						<li>
+							The purpose, usage and expectations of your data types and functions. Use doc
+							comments if possible, so that a language server can show this to you as a tooltip.
+						</li>
+					</ol>
+
+					<h4>Automated testing</h4>
+					<p>
+						A common source of bugs is one function using another, with both of them disagreeing
+						what it should do. For example, a data loading function might think its caller is
+						responsible for closing the database connection, while the caller thinks the function
+						should do it.
+					</p>
+					<p>
+						Such mismatched expectations of behaviour can easily occur when significant time passes
+						between writing the two functions, or when changing one several months later. Even the
+						best documentation won't save you from making this mistake.
+					</p>
+					<p>
+						The only thing you can do to prevent such bugs is writing automated tests, and running
+						them before each commit/version. You should make use of unit and integration tests,
+						and aim to cover as much of your code as possible.
+					</p>
+					<p>
+						While this will greatly reduce the number of bugs you create, it likely won't be
+						sufficient to reach 0. But even so, most bugs are easier to find if you already have a
+						couple of example cases, which you can compare with each other.
+					</p>
+					<p>
+						When you do fix a bug that got through your tests, remember to write additional ones
+						which would catch it. This is important to prevent regressions. Also document what
+						that test protects against. You can do this with comments, ideally doc comments.
 					</p>
 
-					<h4>Targetting Baseline (web only)</h4>
+					<h4>Simple development environment</h4>
 					<p>
-						If your project is a website or web app, you should strive to use only features that are
+						Some languages provide development environments that are time consuming or complex to
+						set up. Examples of this are <em>Visual Studio</em>
+						for <em>C#</em>
+						and <em>RAD Studio</em>
+						for <em>Delphi</em>. These often contain a lot of helpful tools for active development.
+					</p>
+					<p>
+						The problem is in the time they take to set up. If, for any reason, you need to move to
+						a new computer, this might be the end of your project. You might think thins to be an
+						exaggeration, but it is not. It is easy to fall into the trap of doing something else
+						and saying you'll install it tomorrow.
+					</p>
+					<p>
+						Depending on your language you can avoid this by using a simplified, quickly set up
+						development environment. For example, re-preparing Rust (with <code>rustup</code>),
+						Helix and Git (with SSH keys for authentication and signing) can easily be done in ten
+						minutes.
+					</p>
+				</section>
+
+				<section id="abandon" aria-labelledby="abandon-title">
+					<h3 id="abandon-title">Enduring abandonment</h3>
+					<p>
+						Sooner or later you will stop working on your project, because you loose either the
+						will or ability to do so. Depending on what your project is about, or who you are
+						making it for, you might want it to endure that event, at least for a little while.
+					</p>
+
+					<h4>Targeting an stable platform</h4>
+					<p>
+						One of the most frustrating ways that software can become inaccessible to its users is
+						for the platform it runs on to either be abandoned itself, or receiving an update that
+						contains incompatible changes. Neither you, nor the user, nor necessarily the platform
+						developer did anything wrong, but suddenly your project is gone.
+					</p>
+					<p>
+						Some projects only can be done on one specific platform, and for those this problem is
+						unavoidable. For example, the stability of the Linux kernel means absolutely nothing to
+						a mod for <em>Cities: Skylines 2</em>.
+					</p>
+					<p>
+						For others, however, you do get to choose. For example, you might prefer shipping your
+						project as a docker container over shipping it as a normal binary, because that way you
+						can bundle in the exact versions of your platform dependencies.
+					</p>
+					<p>
+						A good bet, as far as stability is concerned, is the web, specifically
 						<a href="https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility">
-							Baseline Widely available
-						</a>. This should mean that you don't run into problems where browser behave
-						differently, or only some support a feature. This avoids the need for fallback
-						implementations, as it is much less likely that any user will have a browser that isn't
-						supported. This also makes it a lot easier to tell a user that they need to upgrade
-						their browser, if a problem actually arises.
+							Baseline widely available
+						</a>. If you can use it, this is probably your best bet, because it is well documented,
+						standardised and multiple independent implementations exist. That last point is
+						something, that almost no other platform can claim.
+					</p>
+
+					<h4>Minimising upkeep costs</h4>
+					<p>
+						If your project needs centralised resources to work, that you have to supply yourself,
+						this will often come with some kind of upkeep cost for you. For example, a main
+						server running in a rented VM might cost you 5€/month.
+					</p>
+					<p>
+						If you want your project to endure, you should strive to minimise these costs. The
+						lighter the burden on your wallet, the less pressure you'll feel to get rid of it.
+						Also, this makes it easier for a potential successor to keep it available.
+					</p>
+					<p>
+						If the central resource is a static website, you should consider offloading that to a
+						free host that probably will outlast you. You could consider
+						<a href="https://codeberg.page/">Codeberg Pages</a>
+						for	this, or <a href="https://docs.github.com/pages">GitHub Pages</a>.
+					</p>
+
+					<h4>Consider open source</h4>
+					<p>
+						If you open source your project, with a permissive license, somebody someday might come
+						along and pick your project back up. Maybe they'll keep it going for a longer time, and
+						everybody gets to enjoy it.
 					</p>
 				</section>
 			</section>
